@@ -5,18 +5,18 @@
 
 Computation times
 =================
-**02:51.573** total execution time for **examples_evaluate** files:
+**02:52.938** total execution time for **examples_evaluate** files:
 
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_evaluate_01-electricRange.py` (``01-electricRange.py``)                           | 01:11.221 | 0.0 MB |
+| :ref:`sphx_glr_examples_evaluate_01-electricRange.py` (``01-electricRange.py``)                           | 01:10.788 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_evaluate_04-TBROM_images.py` (``04-TBROM_images.py``)                             | 00:51.353 | 0.0 MB |
+| :ref:`sphx_glr_examples_evaluate_04-TBROM_images.py` (``04-TBROM_images.py``)                             | 00:51.373 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_evaluate_05-TBROM_coSimulation_pyMAPDL.py` (``05-TBROM_coSimulation_pyMAPDL.py``) | 00:34.498 | 0.0 MB |
+| :ref:`sphx_glr_examples_evaluate_05-TBROM_coSimulation_pyMAPDL.py` (``05-TBROM_coSimulation_pyMAPDL.py``) | 00:34.555 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_evaluate_00-coupledClutches.py` (``00-coupledClutches.py``)                       | 00:07.797 | 0.0 MB |
+| :ref:`sphx_glr_examples_evaluate_00-coupledClutches.py` (``00-coupledClutches.py``)                       | 00:08.379 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_evaluate_03-scalarDROM.py` (``03-scalarDROM.py``)                                 | 00:04.484 | 0.0 MB |
+| :ref:`sphx_glr_examples_evaluate_03-scalarDROM.py` (``03-scalarDROM.py``)                                 | 00:05.641 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
-| :ref:`sphx_glr_examples_evaluate_02-heatExchangerRS.py` (``02-heatExchangerRS.py``)                       | 00:02.219 | 0.0 MB |
+| :ref:`sphx_glr_examples_evaluate_02-heatExchangerRS.py` (``02-heatExchangerRS.py``)                       | 00:02.203 | 0.0 MB |
 +-----------------------------------------------------------------------------------------------------------+-----------+--------+
