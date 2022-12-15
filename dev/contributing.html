@@ -316,6 +316,11 @@ function checkPageExistsAndRedirect(event) {
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#post-issues">
+   Post issues
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#clone-the-repository">
    Clone the repository
   </a>
@@ -326,8 +331,8 @@ function checkPageExistsAndRedirect(event) {
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#post-issues">
-   Post issues
+  <a class="reference internal nav-link" href="#run-unitary-tests">
+   Run unitary tests
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -362,6 +367,11 @@ in the <em>PyAnsys Developer’s Guide</em>. Ensure that you are thoroughly fami
 this guide, paying particular attention to the <a class="reference external" href="https://dev.docs.pyansys.com/coding-style/index.html#coding-style">Coding Style</a> topic, before
 attempting to contribute to PyTwin.</p>
 <p>The following contribution information is specific to PyTwin.</p>
+<section id="post-issues">
+<h2>Post issues<a class="headerlink" href="#post-issues" title="Permalink to this heading">#</a></h2>
+<p>Use the <a class="reference external" href="https://github.com/pyansys/pytwin/issues">PyTwin Issues</a> page to
+submit questions, report bugs, and request new features.</p>
+</section>
 <section id="clone-the-repository">
 <h2>Clone the repository<a class="headerlink" href="#clone-the-repository" title="Permalink to this heading">#</a></h2>
 <p>To clone and install the latest PyTwin release in development
@@ -390,10 +400,14 @@ this directory into a web browser.</p>
 </pre></div>
 </div>
 </section>
-<section id="post-issues">
-<h2>Post issues<a class="headerlink" href="#post-issues" title="Permalink to this heading">#</a></h2>
-<p>Use the <a class="reference external" href="https://github.com/pyansys/pytwin/issues">PyTwin Issues</a> page to
-submit questions, report bugs, and request new features.</p>
+<section id="run-unitary-tests">
+<h2>Run unitary tests<a class="headerlink" href="#run-unitary-tests" title="Permalink to this heading">#</a></h2>
+<p>To launch <code class="docutils literal notranslate"><span class="pre">pytwin</span></code> unitary tests automatically and verify that code modifications do not break existing logic,
+install <a class="reference external" href="https://pypi.org/project/pytest/">pytest</a> package into your Python environment and from the root
+directory, run :</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pytest</span> <span class="o">--</span><span class="n">cov</span><span class="o">=</span><span class="n">pytwin</span> <span class="o">--</span><span class="n">cov</span><span class="o">-</span><span class="n">report</span><span class="o">=</span><span class="n">term</span> <span class="o">--</span><span class="n">cov</span><span class="o">-</span><span class="n">report</span><span class="o">=</span><span class="n">xml</span><span class="p">:</span><span class="o">.</span><span class="n">cov</span><span class="o">/</span><span class="n">coverage</span><span class="o">.</span><span class="n">xml</span> <span class="o">--</span><span class="n">cov</span><span class="o">-</span><span class="n">report</span><span class="o">=</span><span class="n">html</span><span class="p">:</span><span class="o">.</span><span class="n">cov</span><span class="o">/</span><span class="n">html</span> <span class="n">tests</span> <span class="o">-</span><span class="n">vv</span>
+</pre></div>
+</div>
 </section>
 <section id="adhere-to-code-style">
 <h2>Adhere to code style<a class="headerlink" href="#adhere-to-code-style" title="Permalink to this heading">#</a></h2>
