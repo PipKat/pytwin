@@ -57,18 +57,16 @@ Perform required imports
 ~~~~~~~~~~~~~~~~~~~~~~~~
 Perform required imports, which includes downloading and importing the input files
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-35
+.. GENERATED FROM PYTHON SOURCE LINES 27-34
 
 .. code-block:: default
 
 
     import matplotlib.pyplot as plt
     import pandas as pd
+    from pytwin import TwinModel, download_file
 
-    from pytwin import TwinModel, examples
-
-    twin_file = examples.download_file("ElectricRange_23R1_other.twin", "twin_files")
-
+    twin_file = download_file("ElectricRange_23R1_other.twin", "twin_files")
 
 
 
@@ -76,13 +74,14 @@ Perform required imports, which includes downloading and importing the input fil
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 36-39
+
+.. GENERATED FROM PYTHON SOURCE LINES 35-38
 
 User inputs
 ~~~~~~~~~~~~~~~~~~~~~~~~
 Defining user inputs and simulation settings
 
-.. GENERATED FROM PYTHON SOURCE LINES 39-47
+.. GENERATED FROM PYTHON SOURCE LINES 38-46
 
 .. code-block:: default
 
@@ -101,13 +100,13 @@ Defining user inputs and simulation settings
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 48-51
+.. GENERATED FROM PYTHON SOURCE LINES 47-50
 
 Auxiliary functions definition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Definition of plot_result_comparison for post-processing the results
 
-.. GENERATED FROM PYTHON SOURCE LINES 51-103
+.. GENERATED FROM PYTHON SOURCE LINES 50-102
 
 .. code-block:: default
 
@@ -170,13 +169,13 @@ Definition of plot_result_comparison for post-processing the results
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-107
+.. GENERATED FROM PYTHON SOURCE LINES 103-106
 
 Loading the Twin Runtime and instantiating it
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Loading the Twin Runtime and instantiating it.
 
-.. GENERATED FROM PYTHON SOURCE LINES 107-112
+.. GENERATED FROM PYTHON SOURCE LINES 106-111
 
 .. code-block:: default
 
@@ -198,13 +197,13 @@ Loading the Twin Runtime and instantiating it.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 113-116
+.. GENERATED FROM PYTHON SOURCE LINES 112-115
 
 Parametric sweep over the different design points
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Simulating the Twin for each set of parameters values, one time step at a time and collecting corresponding outputs
 
-.. GENERATED FROM PYTHON SOURCE LINES 116-140
+.. GENERATED FROM PYTHON SOURCE LINES 115-139
 
 .. code-block:: default
 
@@ -316,13 +315,13 @@ Simulating the Twin for each set of parameters values, one time step at a time a
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 141-144
+.. GENERATED FROM PYTHON SOURCE LINES 140-143
 
 Post processing
 ~~~~~~~~~~~~~~~~~~~
 Plotting the different results and saving the image on disk
 
-.. GENERATED FROM PYTHON SOURCE LINES 144-146
+.. GENERATED FROM PYTHON SOURCE LINES 143-145
 
 .. code-block:: default
 
@@ -343,7 +342,7 @@ Plotting the different results and saving the image on disk
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 1 minutes  9.110 seconds)
+   **Total running time of the script:** ( 1 minutes  6.032 seconds)
 
 
 .. _sphx_glr_download_examples_evaluate_01-electricRange.py:

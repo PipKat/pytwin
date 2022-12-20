@@ -52,20 +52,18 @@ Perform required imports
 Perform required imports, which includes downloading and importing the
 input files
 
-.. GENERATED FROM PYTHON SOURCE LINES 22-33
+.. GENERATED FROM PYTHON SOURCE LINES 22-32
 
 .. code-block:: default
 
 
     import matplotlib.pyplot as plt
     import pandas as pd
+    from pytwin import TwinModel, download_file, load_data
 
-    from pytwin import TwinModel, examples
-
-    twin_file = examples.download_file("CoupledClutches_23R1_other.twin", "twin_files")
-    csv_input = examples.download_file("CoupledClutches_input.csv", "twin_input_files")
-    twin_config = examples.download_file("CoupledClutches_config.json", "twin_input_files")
-
+    twin_file = download_file("CoupledClutches_23R1_other.twin", "twin_files")
+    csv_input = download_file("CoupledClutches_input.csv", "twin_input_files")
+    twin_config = download_file("CoupledClutches_config.json", "twin_input_files")
 
 
 
@@ -74,13 +72,14 @@ input files
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 34-37
+
+.. GENERATED FROM PYTHON SOURCE LINES 33-36
 
 Auxiliary functions definition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Post processing for results comparison.
 
-.. GENERATED FROM PYTHON SOURCE LINES 37-87
+.. GENERATED FROM PYTHON SOURCE LINES 36-86
 
 .. code-block:: default
 
@@ -141,35 +140,13 @@ Post processing for results comparison.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-91
+.. GENERATED FROM PYTHON SOURCE LINES 87-90
 
-Defining external files path
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Defining the runtime log path as well as loading the input data
-
-.. GENERATED FROM PYTHON SOURCE LINES 91-96
-
-.. code-block:: default
-
-
-    twin_model_input_df = examples.load_data(csv_input)
-    data_dimensions = twin_model_input_df.shape
-    number_of_datapoints = data_dimensions[0] - 1
-
-
-
-
-
-
-
-
-.. GENERATED FROM PYTHON SOURCE LINES 97-100
-
-Loading the Twin Runtime and instantiating it
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Loading the Twin Runtime and external CSV file
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Loading the Twin Runtime and instantiating it.
 
-.. GENERATED FROM PYTHON SOURCE LINES 100-105
+.. GENERATED FROM PYTHON SOURCE LINES 90-98
 
 .. code-block:: default
 
@@ -177,6 +154,9 @@ Loading the Twin Runtime and instantiating it.
 
     print("Loading model: {}".format(twin_file))
     twin_model = TwinModel(twin_file)
+    twin_model_input_df = load_data(csv_input)
+    data_dimensions = twin_model_input_df.shape
+    number_of_datapoints = data_dimensions[0] - 1
 
 
 
@@ -191,14 +171,14 @@ Loading the Twin Runtime and instantiating it.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 106-110
+.. GENERATED FROM PYTHON SOURCE LINES 99-103
 
 Setting up the initial settings of the Twin and initializing it
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Defining the initial inputs of the Twin, initializing it and collecting
 the initial outputs values
 
-.. GENERATED FROM PYTHON SOURCE LINES 110-117
+.. GENERATED FROM PYTHON SOURCE LINES 103-110
 
 .. code-block:: default
 
@@ -216,14 +196,14 @@ the initial outputs values
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 118-122
+.. GENERATED FROM PYTHON SOURCE LINES 111-115
 
 Step by step simulation mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Looping over all the input data, simulating the Twin one time step at a
 time and collecting corresponding outputs
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-159
+.. GENERATED FROM PYTHON SOURCE LINES 115-152
 
 .. code-block:: default
 
@@ -271,13 +251,13 @@ time and collecting corresponding outputs
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 160-163
+.. GENERATED FROM PYTHON SOURCE LINES 153-156
 
 Post processing
 ~~~~~~~~~~~~~~~~~~~
 Plotting the different results and saving the image on disk
 
-.. GENERATED FROM PYTHON SOURCE LINES 163-165
+.. GENERATED FROM PYTHON SOURCE LINES 156-158
 
 .. code-block:: default
 
@@ -298,7 +278,7 @@ Plotting the different results and saving the image on disk
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.922 seconds)
+   **Total running time of the script:** ( 0 minutes  7.036 seconds)
 
 
 .. _sphx_glr_download_examples_evaluate_00-coupledClutches.py:

@@ -57,7 +57,7 @@ Perform required imports
 ~~~~~~~~~~~~~~~~~~~~~~~~
 Perform required imports, which includes downloading and importing the input files
 
-.. GENERATED FROM PYTHON SOURCE LINES 27-39
+.. GENERATED FROM PYTHON SOURCE LINES 27-38
 
 .. code-block:: default
 
@@ -66,12 +66,10 @@ Perform required imports, which includes downloading and importing the input fil
 
     import matplotlib.pyplot as plt
     import pandas as pd
+    from pytwin import TwinModel, download_file, load_data, modify_pytwin_working_dir
 
-    from pytwin import TwinModel, examples, modify_pytwin_working_dir
-
-    twin_file = examples.download_file("HX_scalarDRB_23R1_other.twin", "twin_files")
-    csv_input = examples.download_file("HX_scalarDRB_input.csv", "twin_input_files")
-
+    twin_file = download_file("HX_scalarDRB_23R1_other.twin", "twin_files")
+    csv_input = download_file("HX_scalarDRB_input.csv", "twin_input_files")
 
 
 
@@ -80,13 +78,14 @@ Perform required imports, which includes downloading and importing the input fil
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 40-43
+
+.. GENERATED FROM PYTHON SOURCE LINES 39-42
 
 Auxiliary functions definition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Post processing for results comparison.
 
-.. GENERATED FROM PYTHON SOURCE LINES 43-84
+.. GENERATED FROM PYTHON SOURCE LINES 42-83
 
 .. code-block:: default
 
@@ -138,20 +137,20 @@ Post processing for results comparison.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 85-88
+.. GENERATED FROM PYTHON SOURCE LINES 84-87
 
 Defining external files path
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Changing the working directory (by default in %temp%) to user defined location, and loading the input data
 
-.. GENERATED FROM PYTHON SOURCE LINES 88-95
+.. GENERATED FROM PYTHON SOURCE LINES 87-94
 
 .. code-block:: default
 
 
     modify_pytwin_working_dir(os.path.join(os.path.dirname(twin_file), "pyTwinWorkingDir"))
 
-    twin_model_input_df = examples.load_data(csv_input)
+    twin_model_input_df = load_data(csv_input)
     data_dimensions = twin_model_input_df.shape
     number_of_datapoints = data_dimensions[0] - 1
 
@@ -162,13 +161,13 @@ Changing the working directory (by default in %temp%) to user defined location, 
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 96-99
+.. GENERATED FROM PYTHON SOURCE LINES 95-98
 
 Loading the Twin Runtime and instantiating it
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Loading the Twin Runtime and instantiating it.
 
-.. GENERATED FROM PYTHON SOURCE LINES 99-105
+.. GENERATED FROM PYTHON SOURCE LINES 98-104
 
 .. code-block:: default
 
@@ -191,13 +190,13 @@ Loading the Twin Runtime and instantiating it.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 106-109
+.. GENERATED FROM PYTHON SOURCE LINES 105-108
 
 Setting up the initial settings of the Twin and initializing it
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Defining the initial inputs of the Twin, initializing it and collecting the initial outputs values
 
-.. GENERATED FROM PYTHON SOURCE LINES 109-116
+.. GENERATED FROM PYTHON SOURCE LINES 108-115
 
 .. code-block:: default
 
@@ -215,13 +214,13 @@ Defining the initial inputs of the Twin, initializing it and collecting the init
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 117-120
+.. GENERATED FROM PYTHON SOURCE LINES 116-119
 
 Step by step simulation mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Looping over all the input data, simulating the Twin one time step at a time and collecting corresponding outputs
 
-.. GENERATED FROM PYTHON SOURCE LINES 120-168
+.. GENERATED FROM PYTHON SOURCE LINES 119-167
 
 .. code-block:: default
 
@@ -280,13 +279,13 @@ Looping over all the input data, simulating the Twin one time step at a time and
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 169-172
+.. GENERATED FROM PYTHON SOURCE LINES 168-171
 
 Post processing
 ~~~~~~~~~~~~~~~~~~~
 Plotting the different results and saving the image on disk
 
-.. GENERATED FROM PYTHON SOURCE LINES 172-174
+.. GENERATED FROM PYTHON SOURCE LINES 171-173
 
 .. code-block:: default
 
@@ -307,7 +306,7 @@ Plotting the different results and saving the image on disk
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.344 seconds)
+   **Total running time of the script:** ( 0 minutes  4.203 seconds)
 
 
 .. _sphx_glr_download_examples_evaluate_03-scalarDROM.py:

@@ -55,7 +55,7 @@ Perform required imports
 ~~~~~~~~~~~~~~~~~~~~~~~~
 Perform required imports, which includes downloading and importing the input files
 
-.. GENERATED FROM PYTHON SOURCE LINES 25-34
+.. GENERATED FROM PYTHON SOURCE LINES 25-33
 
 .. code-block:: default
 
@@ -63,11 +63,9 @@ Perform required imports, which includes downloading and importing the input fil
     import matplotlib.pyplot as plt
     import numpy
     import pandas as pd
+    from pytwin import TwinModel, download_file
 
-    from pytwin import TwinModel, examples
-
-    twin_file = examples.download_file("HeatExchangerRS_23R1_other.twin", "twin_files")
-
+    twin_file = download_file("HeatExchangerRS_23R1_other.twin", "twin_files")
 
 
 
@@ -75,13 +73,14 @@ Perform required imports, which includes downloading and importing the input fil
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 35-38
+
+.. GENERATED FROM PYTHON SOURCE LINES 34-37
 
 User inputs
 ~~~~~~~~~~~~~~~~~~~~~~~~
 Defining user inputs and simulation settings
 
-.. GENERATED FROM PYTHON SOURCE LINES 38-43
+.. GENERATED FROM PYTHON SOURCE LINES 37-42
 
 .. code-block:: default
 
@@ -97,13 +96,13 @@ Defining user inputs and simulation settings
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 44-47
+.. GENERATED FROM PYTHON SOURCE LINES 43-46
 
 Auxiliary functions definition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Definition of plot_result_comparison for post-processing the results
 
-.. GENERATED FROM PYTHON SOURCE LINES 47-88
+.. GENERATED FROM PYTHON SOURCE LINES 46-87
 
 .. code-block:: default
 
@@ -155,13 +154,13 @@ Definition of plot_result_comparison for post-processing the results
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 89-92
+.. GENERATED FROM PYTHON SOURCE LINES 88-91
 
 Loading the Twin Runtime and instantiating it
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Loading the Twin Runtime and instantiating it.
 
-.. GENERATED FROM PYTHON SOURCE LINES 92-97
+.. GENERATED FROM PYTHON SOURCE LINES 91-96
 
 .. code-block:: default
 
@@ -183,7 +182,7 @@ Loading the Twin Runtime and instantiating it.
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 98-104
+.. GENERATED FROM PYTHON SOURCE LINES 97-103
 
 Evaluating the Twin with different input values and collecting the corresponding outputs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -192,7 +191,7 @@ Since the Twin is based on a static model, 2 different options can be considered
 - create an input dataframe considering all the input values to evaluate and run the evaluate batch function
 (in that case, a time dimension needs to be defined arbitrarily to execute the transient simulation)
 
-.. GENERATED FROM PYTHON SOURCE LINES 104-121
+.. GENERATED FROM PYTHON SOURCE LINES 103-120
 
 .. code-block:: default
 
@@ -276,13 +275,13 @@ Since the Twin is based on a static model, 2 different options can be considered
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 122-125
+.. GENERATED FROM PYTHON SOURCE LINES 121-124
 
 Post processing
 ~~~~~~~~~~~~~~~~~~~
 Plotting the different results and saving the image on disk
 
-.. GENERATED FROM PYTHON SOURCE LINES 125-127
+.. GENERATED FROM PYTHON SOURCE LINES 124-126
 
 .. code-block:: default
 
@@ -303,7 +302,7 @@ Plotting the different results and saving the image on disk
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  2.234 seconds)
+   **Total running time of the script:** ( 0 minutes  2.047 seconds)
 
 
 .. _sphx_glr_download_examples_evaluate_02-heatExchangerRS.py:
