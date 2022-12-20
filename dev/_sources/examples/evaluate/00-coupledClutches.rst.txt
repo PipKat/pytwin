@@ -278,7 +278,7 @@ Plotting the different results and saving the image on disk
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  7.036 seconds)
+   **Total running time of the script:** ( 0 minutes  7.350 seconds)
 
 
 .. _sphx_glr_download_examples_evaluate_00-coupledClutches.py:
