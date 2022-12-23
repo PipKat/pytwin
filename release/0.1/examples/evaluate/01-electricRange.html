@@ -207,7 +207,7 @@ function checkPageExistsAndRedirect(event) {
 
             $("#version_switcher_menu").append(node);
             // replace dropdown button text with the preferred display name of
-            // this version, rather than using sphinx's 0.1.1 variable.
+            // this version, rather than using sphinx's 0.1.2 variable.
             // also highlight the dropdown entry for the currently-viewed
             // version's entry
             if (entry.version == "0.1") {
@@ -368,11 +368,6 @@ function checkPageExistsAndRedirect(event) {
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#user-inputs">
-   User inputs
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#auxiliary-functions-definition">
    Auxiliary functions definition
   </a>
@@ -380,6 +375,11 @@ function checkPageExistsAndRedirect(event) {
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#loading-the-twin-runtime-and-instantiating-it">
    Loading the Twin Runtime and instantiating it
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#user-inputs">
+   User inputs
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -439,18 +439,6 @@ effects on the overall electric range</p>
 <span class="kn">from</span> <span class="nn">pytwin</span> <span class="kn">import</span> <span class="n">TwinModel</span><span class="p">,</span> <span class="n">download_file</span>
 
 <a href="https://docs.python.org/dev/library/stdtypes.html#str" title="builtins.str" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">twin_file</span></a> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="s2">&quot;ElectricRange_23R1_other.twin&quot;</span><span class="p">,</span> <span class="s2">&quot;twin_files&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</section>
-<section id="user-inputs">
-<h2>User inputs<a class="headerlink" href="#user-inputs" title="Permalink to this heading">#</a></h2>
-<p>Defining user inputs and simulation settings</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/dev/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">time_step</span></a> <span class="o">=</span> <span class="mf">1.0</span>
-<a href="https://docs.python.org/dev/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">time_end</span></a> <span class="o">=</span> <span class="mf">24000.0</span>  <span class="c1"># simulating the model for 400 minutes</span>
-<a href="https://docs.python.org/dev/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dp1</span></a> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ElectricRange_powerLoad&quot;</span><span class="p">:</span> <span class="mf">2000.0</span><span class="p">,</span> <span class="s2">&quot;ElectricRange_vehicleMass&quot;</span><span class="p">:</span> <span class="mf">2000.0</span><span class="p">}</span>
-<a href="https://docs.python.org/dev/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dp2</span></a> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ElectricRange_powerLoad&quot;</span><span class="p">:</span> <span class="mf">3000.0</span><span class="p">,</span> <span class="s2">&quot;ElectricRange_vehicleMass&quot;</span><span class="p">:</span> <span class="mf">2000.0</span><span class="p">}</span>
-<a href="https://docs.python.org/dev/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dp3</span></a> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ElectricRange_powerLoad&quot;</span><span class="p">:</span> <span class="mf">2000.0</span><span class="p">,</span> <span class="s2">&quot;ElectricRange_vehicleMass&quot;</span><span class="p">:</span> <span class="mf">1500.0</span><span class="p">}</span>
-<a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sweep</span></a> <span class="o">=</span> <span class="p">[</span><a href="https://docs.python.org/dev/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dp1</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dp2</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dp3</span></a><span class="p">]</span>
 </pre></div>
 </div>
 </section>
@@ -516,6 +504,22 @@ effects on the overall electric range</p>
 </pre></div>
 </div>
 <div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Loading model: C:\Users\ansys\AppData\Local\Temp\TwinExamples\twin_files\ElectricRange_23R1_other.twin
+</pre></div>
+</div>
+</section>
+<section id="user-inputs">
+<h2>User inputs<a class="headerlink" href="#user-inputs" title="Permalink to this heading">#</a></h2>
+<p>Defining user inputs and simulation settings</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><a href="https://docs.python.org/dev/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">time_step</span></a> <span class="o">=</span> <span class="mf">1.0</span>
+<a href="https://docs.python.org/dev/library/functions.html#float" title="builtins.float" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">time_end</span></a> <span class="o">=</span> <span class="mf">24000.0</span>  <span class="c1"># simulating the model for 400 minutes</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Twin parameters : </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">twin_model</span><span class="o">.</span><span class="n">parameters</span><span class="p">))</span>
+<a href="https://docs.python.org/dev/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dp1</span></a> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ElectricRange_powerLoad&quot;</span><span class="p">:</span> <span class="mf">2000.0</span><span class="p">,</span> <span class="s2">&quot;ElectricRange_vehicleMass&quot;</span><span class="p">:</span> <span class="mf">2000.0</span><span class="p">}</span>
+<a href="https://docs.python.org/dev/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dp2</span></a> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ElectricRange_powerLoad&quot;</span><span class="p">:</span> <span class="mf">3000.0</span><span class="p">,</span> <span class="s2">&quot;ElectricRange_vehicleMass&quot;</span><span class="p">:</span> <span class="mf">2000.0</span><span class="p">}</span>
+<a href="https://docs.python.org/dev/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dp3</span></a> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;ElectricRange_powerLoad&quot;</span><span class="p">:</span> <span class="mf">2000.0</span><span class="p">,</span> <span class="s2">&quot;ElectricRange_vehicleMass&quot;</span><span class="p">:</span> <span class="mf">1500.0</span><span class="p">}</span>
+<a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sweep</span></a> <span class="o">=</span> <span class="p">[</span><a href="https://docs.python.org/dev/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dp1</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dp2</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/stdtypes.html#dict" title="builtins.dict" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">dp3</span></a><span class="p">]</span>
+</pre></div>
+</div>
+<div class="sphx-glr-script-out highlight-none notranslate"><div class="highlight"><pre><span></span>Twin parameters : {&#39;ElectricRange_powerLoad&#39;: 2000.0, &#39;ElectricRange_vehicleMass&#39;: 2000.0}
 </pre></div>
 </div>
 </section>
@@ -627,7 +631,7 @@ Simulating the model with parameters {&#39;ElectricRange_powerLoad&#39;: 2000.0,
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plot_result_comparison</span><span class="p">(</span><a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">results</span></a><span class="p">,</span> <a href="https://docs.python.org/dev/library/stdtypes.html#list" title="builtins.list" class="sphx-glr-backref-module-builtins sphx-glr-backref-type-py-class sphx-glr-backref-instance"><span class="n">sweep</span></a><span class="p">)</span>
 </pre></div>
 </div>
-<img src="../../_images/sphx_glr_01-electricRange_001.png" srcset="../../_images/sphx_glr_01-electricRange_001.png" alt="Drive cycle, Range/distance achieved vs battery SoC" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  14.297 seconds)</p>
+<img src="../../_images/sphx_glr_01-electricRange_001.png" srcset="../../_images/sphx_glr_01-electricRange_001.png" alt="Drive cycle, Range/distance achieved vs battery SoC" class = "sphx-glr-single-img"/><p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 1 minutes  6.735 seconds)</p>
 <div class="sphx-glr-footer sphx-glr-footer-example docutils container" id="sphx-glr-download-examples-evaluate-01-electricrange-py">
 <div class="sphx-glr-download sphx-glr-download-python docutils container">
 <p><a class="reference download internal" download="" href="../../_downloads/2e053253a79f3cda72b756f9930fd454/01-electricRange.py"><code class="xref download docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Python</span> <span class="pre">source</span> <span class="pre">code:</span> <span class="pre">01-electricRange.py</span></code></a></p>
