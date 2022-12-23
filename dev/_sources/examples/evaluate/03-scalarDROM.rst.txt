@@ -220,7 +220,7 @@ Step by step simulation mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Looping over all the input data, simulating the Twin one time step at a time and collecting corresponding outputs
 
-.. GENERATED FROM PYTHON SOURCE LINES 119-167
+.. GENERATED FROM PYTHON SOURCE LINES 119-166
 
 .. code-block:: default
 
@@ -254,8 +254,7 @@ Looping over all the input data, simulating the Twin one time step at a time and
             for column in twin_model_input_df.columns[1::]:
                 inputs[column] = (
                     twin_model_input_df[column][data_index] * 0.9
-                )  # the second Twin will be evaluated using same
-                # inputs reduced by 10%
+                )  # the second Twin will be evaluated using same inputs reduced by 10%
             twin_model_what_if.evaluate_step_by_step(step_size=step, inputs=inputs)
             outputs = [twin_model_what_if.evaluation_time]
             for item in twin_model_what_if.outputs:
@@ -279,13 +278,13 @@ Looping over all the input data, simulating the Twin one time step at a time and
 
 
 
-.. GENERATED FROM PYTHON SOURCE LINES 168-171
+.. GENERATED FROM PYTHON SOURCE LINES 167-170
 
 Post processing
 ~~~~~~~~~~~~~~~~~~~
 Plotting the different results and saving the image on disk
 
-.. GENERATED FROM PYTHON SOURCE LINES 171-173
+.. GENERATED FROM PYTHON SOURCE LINES 170-172
 
 .. code-block:: default
 
@@ -306,7 +305,7 @@ Plotting the different results and saving the image on disk
 
 .. rst-class:: sphx-glr-timing
 
-   **Total running time of the script:** ( 0 minutes  4.422 seconds)
+   **Total running time of the script:** ( 0 minutes  5.844 seconds)
 
 
 .. _sphx_glr_download_examples_evaluate_03-scalarDROM.py:
