@@ -348,23 +348,27 @@ Python code to integrate and deploy Ansys Digital Twins Runtimes, as explained i
 <h2>Global settings<a class="headerlink" href="#global-settings" title="Permalink to this heading">#</a></h2>
 <p>By default, the logging is enabled with PyTwin at a level of <code class="docutils literal notranslate"><span class="pre">INFO</span></code>, and simulation output files will be generated in the <code class="docutils literal notranslate"><span class="pre">%temp%/pytwin</span></code> folder.
 You can change these global settings at anytime using the following functions:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Modify working directory:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pytwin</span> <span class="kn">import</span> <span class="n">modify_pytwin_working_dir</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">modify_pytwin_working_dir</span><span class="p">(</span><span class="s1">&#39;path_to_new_working_dir&#39;</span><span class="p">,</span> <span class="n">erase</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Modify working directory:</span>
+<span class="kn">from</span> <span class="nn">pytwin</span> <span class="kn">import</span> <span class="n">modify_pytwin_working_dir</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Redirect logging to a file in the working directory:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pytwin</span> <span class="kn">import</span> <span class="n">modify_pytwin_logging</span><span class="p">,</span> <span class="n">get_pytwin_log_file</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pytwin</span> <span class="kn">import</span> <span class="n">PYTWIN_LOGGING_OPT_FILE</span><span class="p">,</span> <span class="n">PYTWIN_LOG_DEBUG</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">modify_pytwin_logging</span><span class="p">(</span><span class="n">new_option</span><span class="o">=</span><span class="n">PYTWIN_LOGGING_OPT_FILE</span><span class="p">,</span> <span class="n">new_level</span><span class="o">=</span><span class="n">PYTWIN_LOG_DEBUG</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">get_pytwin_log_file</span><span class="p">())</span>
+<span class="n">modify_pytwin_working_dir</span><span class="p">(</span><span class="s2">&quot;path_to_new_working_dir&quot;</span><span class="p">,</span> <span class="n">erase</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Redirect pytwin package logging to the console:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pytwin</span> <span class="kn">import</span> <span class="n">modify_pytwin_logging</span><span class="p">,</span> <span class="n">PYTWIN_LOGGING_OPT_CONSOLE</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">modify_pytwin_logging</span><span class="p">(</span><span class="n">PYTWIN_LOGGING_OPT_CONSOLE</span><span class="p">)</span>
+<span class="c1"># Redirect logging to a file in the working directory:</span>
+<span class="kn">from</span> <span class="nn">pytwin</span> <span class="kn">import</span> <span class="n">modify_pytwin_logging</span><span class="p">,</span> <span class="n">get_pytwin_log_file</span>
+<span class="kn">from</span> <span class="nn">pytwin</span> <span class="kn">import</span> <span class="n">PYTWIN_LOGGING_OPT_FILE</span><span class="p">,</span> <span class="n">PYTWIN_LOG_DEBUG</span>
 
-<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Disable pytwin package logging:</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pytwin</span> <span class="kn">import</span> <span class="n">modify_pytwin_logging</span><span class="p">,</span> <span class="n">PYTWIN_LOGGING_OPT_NOLOGGING</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">modify_pytwin_logging</span><span class="p">(</span><span class="n">PYTWIN_LOGGING_OPT_NOLOGGING</span><span class="p">)</span>
+<span class="n">modify_pytwin_logging</span><span class="p">(</span><span class="n">new_option</span><span class="o">=</span><span class="n">PYTWIN_LOGGING_OPT_FILE</span><span class="p">,</span> <span class="n">new_level</span><span class="o">=</span><span class="n">PYTWIN_LOG_DEBUG</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">get_pytwin_log_file</span><span class="p">())</span>
+
+<span class="c1"># Redirect pytwin package logging to the console:</span>
+<span class="kn">from</span> <span class="nn">pytwin</span> <span class="kn">import</span> <span class="n">modify_pytwin_logging</span><span class="p">,</span> <span class="n">PYTWIN_LOGGING_OPT_CONSOLE</span>
+
+<span class="n">modify_pytwin_logging</span><span class="p">(</span><span class="n">PYTWIN_LOGGING_OPT_CONSOLE</span><span class="p">)</span>
+
+<span class="c1"># Disable pytwin package logging:</span>
+<span class="kn">from</span> <span class="nn">pytwin</span> <span class="kn">import</span> <span class="n">modify_pytwin_logging</span><span class="p">,</span> <span class="n">PYTWIN_LOGGING_OPT_NOLOGGING</span>
+
+<span class="n">modify_pytwin_logging</span><span class="p">(</span><span class="n">PYTWIN_LOGGING_OPT_NOLOGGING</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="../api/logging/index.html#ref-index-api-logging"><span class="std std-ref">Global Settings</span></a> for more information on the APIs available</p>
@@ -390,7 +394,7 @@ You can change these global settings at anytime using the following functions:</
   
   <div class="footer-item">
     <p class="copyright">
-    &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
+    &copy; Copyright (c) 2023 ANSYS, Inc. All rights reserved.<br>
 </p>
   </div>
   

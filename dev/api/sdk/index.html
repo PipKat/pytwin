@@ -971,11 +971,11 @@ Twin Runtime SDK functionalities.</p>
 </table>
 <section id="workflow-example">
 <h2>Workflow Example<a class="headerlink" href="#workflow-example" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pytwin</span> <span class="kn">import</span> <span class="n">TwinRuntime</span><span class="p">,</span> <span class="n">LogLevel</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pytwin</span> <span class="kn">import</span> <span class="n">TwinRuntime</span><span class="p">,</span> <span class="n">LogLevel</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pytwin</span> <span class="kn">import</span> <span class="n">examples</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_file</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="s2">&quot;CoupledClutches_23R1_other.twin&quot;</span><span class="p">,</span><span class="s2">&quot;twin_files&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_runtime</span> <span class="o">=</span> <span class="n">TwinRuntime</span><span class="p">(</span><span class="n">twin_model</span><span class="p">)</span> <span class="c1"># Load the Runtime</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_runtime</span><span class="o">.</span><span class="n">print_model_info</span><span class="p">(</span><span class="n">max_var_to_print</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="c1"># Print Twin information</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_file</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="s2">&quot;CoupledClutches_23R1_other.twin&quot;</span><span class="p">,</span> <span class="s2">&quot;twin_files&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_runtime</span> <span class="o">=</span> <span class="n">TwinRuntime</span><span class="p">(</span><span class="n">twin_model</span><span class="p">)</span>  <span class="c1"># Load the Runtime</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_runtime</span><span class="o">.</span><span class="n">print_model_info</span><span class="p">(</span><span class="n">max_var_to_print</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>  <span class="c1"># Print Twin information</span>
 <span class="go">------------------------------------- Model Info -------------------------------------</span>
 <span class="go">Twin Runtime Version: 2.4.0.0</span>
 <span class="go">Model Name: CoupledClutchesTwin</span>
@@ -1012,12 +1012,12 @@ Twin Runtime SDK functionalities.</p>
 <span class="go">2  solver.reltol  ...                   Solver relative tolerance</span>
 
 <span class="go">[3 rows x 9 columns]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_runtime</span><span class="o">.</span><span class="n">twin_instantiate</span><span class="p">()</span> <span class="c1"># Instantiate the Runtime</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_runtime</span><span class="o">.</span><span class="n">twin_initialize</span><span class="p">()</span> <span class="c1"># Initialize the Twin simulation</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">twin_runtime</span><span class="o">.</span><span class="n">twin_get_outputs</span><span class="p">())</span> <span class="c1"># Collect and print the initial outputs values</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_runtime</span><span class="o">.</span><span class="n">twin_instantiate</span><span class="p">()</span>  <span class="c1"># Instantiate the Runtime</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_runtime</span><span class="o">.</span><span class="n">twin_initialize</span><span class="p">()</span>  <span class="c1"># Initialize the Twin simulation</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">twin_runtime</span><span class="o">.</span><span class="n">twin_get_outputs</span><span class="p">())</span>  <span class="c1"># Collect and print the initial outputs values</span>
 <span class="go">[0.0, 0.0, 0.0]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_runtime</span><span class="o">.</span><span class="n">twin_simulate</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span> <span class="c1"># Simulate the Twin till time_end</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_runtime</span><span class="o">.</span><span class="n">twin_close</span><span class="p">()</span> <span class="c1"># Close the Runtime</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_runtime</span><span class="o">.</span><span class="n">twin_simulate</span><span class="p">(</span><span class="mf">0.001</span><span class="p">)</span>  <span class="c1"># Simulate the Twin till time_end</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_runtime</span><span class="o">.</span><span class="n">twin_close</span><span class="p">()</span>  <span class="c1"># Close the Runtime</span>
 </pre></div>
 </div>
 </section>
@@ -1042,7 +1042,7 @@ Twin Runtime SDK functionalities.</p>
   
   <div class="footer-item">
     <p class="copyright">
-    &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
+    &copy; Copyright (c) 2023 ANSYS, Inc. All rights reserved.<br>
 </p>
   </div>
   

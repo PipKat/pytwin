@@ -971,13 +971,13 @@ to facilitate the manipulation and execution of Twin Runtimes through TwinModel.
 </table>
 <section id="workflow-example">
 <h2>Workflow Example<a class="headerlink" href="#workflow-example" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pytwin</span> <span class="kn">import</span> <span class="n">TwinModel</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pytwin</span> <span class="kn">import</span> <span class="n">TwinModel</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pytwin</span> <span class="kn">import</span> <span class="n">examples</span>
 
 <span class="go"># downloading the input files</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_file</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="s2">&quot;CoupledClutches_23R1_other.twin&quot;</span><span class="p">,</span><span class="s2">&quot;twin_files&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">csv_input</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="s2">&quot;CoupledClutches_input.csv&quot;</span><span class="p">,</span><span class="s2">&quot;twin_input_files&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_config</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="s2">&quot;CoupledClutches_config.json&quot;</span><span class="p">,</span><span class="s2">&quot;twin_input_files&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_file</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="s2">&quot;CoupledClutches_23R1_other.twin&quot;</span><span class="p">,</span> <span class="s2">&quot;twin_files&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">csv_input</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="s2">&quot;CoupledClutches_input.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;twin_input_files&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_config</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="s2">&quot;CoupledClutches_config.json&quot;</span><span class="p">,</span> <span class="s2">&quot;twin_input_files&quot;</span><span class="p">)</span>
 
 <span class="go"># loading the CSV file containing the Twin input data over time</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">twin_model_input_df</span> <span class="o">=</span> <span class="n">examples</span><span class="o">.</span><span class="n">load_data</span><span class="p">(</span><span class="n">csv_input</span><span class="p">)</span>
@@ -986,10 +986,11 @@ to facilitate the manipulation and execution of Twin Runtimes through TwinModel.
 
 <span class="gp">&gt;&gt;&gt; </span><span class="n">inputs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">twin_model_input_df</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="mi">1</span><span class="p">::]:</span>
-<span class="go">    inputs[column] = twin_model_input_df[column][0]</span>
+<span class="gp">... </span>    <span class="n">inputs</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">twin_model_input_df</span><span class="p">[</span><span class="n">column</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">...</span>
 
 <span class="go"># Initializing the TwinModel given initial inputs values as well as a configuration file for parameters values</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_model</span><span class="o">.</span><span class="n">initialize_evaluation</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">,</span><span class="n">json_config_filepath</span><span class="o">=</span><span class="n">twin_config</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">twin_model</span><span class="o">.</span><span class="n">initialize_evaluation</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">inputs</span><span class="p">,</span> <span class="n">json_config_filepath</span><span class="o">=</span><span class="n">twin_config</span><span class="p">)</span>
 
 <span class="go"># Evaluating the TwinModel in batch mode and printing the computed outputs values</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">results_batch_pd</span> <span class="o">=</span> <span class="n">twin_model</span><span class="o">.</span><span class="n">evaluate_batch</span><span class="p">(</span><span class="n">twin_model_input_df</span><span class="p">)</span>
@@ -1032,7 +1033,7 @@ to facilitate the manipulation and execution of Twin Runtimes through TwinModel.
   
   <div class="footer-item">
     <p class="copyright">
-    &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
+    &copy; Copyright (c) 2023 ANSYS, Inc. All rights reserved.<br>
 </p>
   </div>
   
