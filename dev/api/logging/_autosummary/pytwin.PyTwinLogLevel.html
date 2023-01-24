@@ -970,6 +970,19 @@ function checkPageExistsAndRedirect(event) {
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pytwin.</span></span><span class="sig-name descname"><span class="pre">PyTwinLogLevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pytwin.PyTwinLogLevel" title="Permalink to this definition">#</a></dt>
 <dd><p>Enum to choose logging level to be used by all pytwin objects.
 It follows standard python logging levels.</p>
+<dl class="simple">
+<dt>PYTWIN_LOG_DEBUG:</dt><dd><p>Detailed information, typically of interest only when diagnosing problems.</p>
+</dd>
+<dt>PYTWIN_LOG_INFO:</dt><dd><p>Confirmation that things are working as expected.</p>
+</dd>
+<dt>PYTWIN_LOG_WARNING:</dt><dd><p>An indication that something unexpected happened, or indicative of some problem in the near future
+(e.g. ‘disk space low’). The software is still working as expected.</p>
+</dd>
+<dt>PYTWIN_LOG_ERROR:</dt><dd><p>Due to a more serious problem, the software has not been able to perform some function.</p>
+</dd>
+<dt>PYTWIN_LOG_CRITICAL:</dt><dd><p>A serious error, indicating that the program itself may be unable to continue running.</p>
+</dd>
+</dl>
 <p class="rubric">Attributes</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
